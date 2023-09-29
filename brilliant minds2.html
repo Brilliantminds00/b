@@ -2,13 +2,13 @@
 <head>
 <title>Brilliant Minds</title>
 <link rel="stylesheet" href="style2.css">
-<link rel="shortcut icon" href="F:\brilliant minds\logo.png">
+<link rel="shortcut icon" href=logo.png">
 </head>
  
 <body>
     <div class="cla">
 <h3><font color="orange">STUDENT REGISTRATION FORM</font></h3>
-<center><form>
+<center><form onsubmit="sendEmail(); reset(); return(false);">
  <font color="orange">
  
 <!----- First Name ---------------------------------------------------------->
@@ -43,5 +43,22 @@ Female <input type="radio" name="Gender" value="Female" /><br><br>
  </font>
 </form></center>
 </div>
+ <script src="https://smtpjs.com/v3/smtp.js">
+</script>
+ <script>
+    function sendEmail(){
+        Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "jmr109726@gmail.com",
+    Password : "5EEBB8C4E7888BE4808636E2CC34E7798B26",
+    To : 'kashifnaji32@gmail.com',
+    From : document.getElementById("email").value,,
+    Subject : "new contact from Enquiry",
+    Body : "And this is the body"
+}).then(
+  message => alert(message)
+);
+    }
+</script>
 </body>
 </html>
